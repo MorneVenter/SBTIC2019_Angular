@@ -1,8 +1,13 @@
-<div>
+<div *ngIf="hasHeader">
   <tr>
-    <td><h6>Date</h6></td>
-    <td><h6>Amount</h6></td>
-    <td><h6>Description</h6></td>
-    <td><h6>Location</h6></td>
+    <td><h6>Suggestion</h6></td>
+    <td><h6>Reason</h6></td>
+  </tr>
+</div>
+
+<div *ngIf="!hasHeader">
+  <tr>
+    <td>{{mySuggestion.suggestion}}</td>
+    <td>{{mySuggestion.reason}}</td>
   </tr>
 </div>
