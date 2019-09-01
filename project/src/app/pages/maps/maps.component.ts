@@ -1,4 +1,5 @@
-import { Component,OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import {TransactionDataModal} from '../../Models/transaction-data.modal';
 
 declare var google: any;
 
@@ -9,6 +10,9 @@ declare var google: any;
 })
 
 export class MapsComponent implements OnInit {
+
+    t1 = new TransactionDataModal(new Date(), 512, 'Krispy Kreme', 'Fast Food', 'Sandton');
+    t2 = new TransactionDataModal(new Date('2019-01-16'), 21.50, 'Airtime - 21.50', 'other', 'Pretoria North');
     ngOnInit() {
     }
 }

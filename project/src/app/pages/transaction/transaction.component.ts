@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
+import {TransactionDataModal} from '../../Models/transaction-data.modal';
 
 @Component({
   selector: 'app-transaction',
@@ -6,6 +7,9 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./transaction.component.scss']
 })
 export class TransactionComponent implements OnInit {
+
+  @Input()
+  tModel: TransactionDataModal;
 
   constructor() { }
 
