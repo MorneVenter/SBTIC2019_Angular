@@ -17,40 +17,40 @@ export class DashboardComponent implements OnInit{
   public chartHours;
 
     ngOnInit(){
-      this.chartColor = "#FFFFFF";
+      this.chartColor = '#FFFFFF';
 
-      this.canvas = document.getElementById("chartHours");
-      this.ctx = this.canvas.getContext("2d");
+      this.canvas = document.getElementById('chartHours');
+      this.ctx = this.canvas.getContext('2d');
 
       this.chartHours = new Chart(this.ctx, {
         type: 'line',
 
         data: {
-          labels: ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct"],
+          labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct'],
           datasets: [{
-              borderColor: "#6bd098",
-              backgroundColor: "#6bd098",
-              pointRadius: 0,
-              pointHoverRadius: 0,
+              borderColor: '#50a075',
+              backgroundColor: '#6bd098',
+              pointRadius: 2,
+              pointHoverRadius: 2,
               borderWidth: 3,
-              data: [300, 310, 316, 322, 330, 326, 333, 345, 338, 354]
+              data: [2560.00, 3100.00, 2100.10, 2800.00, 4850.50, 1800.15, 1500.90, 2547.70, 2200.00, 3200.70]
             },
-            {
-              borderColor: "#f17e5d",
-              backgroundColor: "#f17e5d",
-              pointRadius: 0,
-              pointHoverRadius: 0,
-              borderWidth: 3,
-              data: [320, 340, 365, 360, 370, 385, 390, 384, 408, 420]
-            },
-            {
-              borderColor: "#fcc468",
-              backgroundColor: "#fcc468",
-              pointRadius: 0,
-              pointHoverRadius: 0,
-              borderWidth: 3,
-              data: [370, 394, 415, 409, 425, 445, 460, 450, 478, 484]
-            }
+            // {
+            //   borderColor: "#f17e5d",
+            //   backgroundColor: "#f17e5d",
+            //   pointRadius: 0,
+            //   pointHoverRadius: 0,
+            //   borderWidth: 3,
+            //   data: [320, 340, 365, 360, 370, 385, 390, 384, 408, 420]
+            // },
+            // {
+            //   borderColor: "#fcc468",
+            //   backgroundColor: "#fcc468",
+            //   pointRadius: 0,
+            //   pointHoverRadius: 0,
+            //   borderWidth: 3,
+            //   data: [370, 394, 415, 409, 425, 445, 460, 450, 478, 484]
+            // }
           ]
         },
         options: {
