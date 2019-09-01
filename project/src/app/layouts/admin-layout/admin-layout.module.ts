@@ -16,6 +16,8 @@ import { UpgradeComponent }         from '../../pages/upgrade/upgrade.component'
 
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import {TransactionComponent} from '../../pages/transaction/transaction.component';
+import {SuggestionComponent} from '../../pages/suggestion/suggestion.component';
+
 
 @NgModule({
   imports: [
@@ -34,6 +36,7 @@ import {TransactionComponent} from '../../pages/transaction/transaction.componen
     MapsComponent,
     NotificationsComponent,
     TransactionComponent,
+    SuggestionComponent,
   ]
 })
 

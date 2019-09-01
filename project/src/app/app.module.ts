@@ -13,15 +13,15 @@ import { AppRoutes } from './app.routing';
 
 import { AdminLayoutComponent } from './layouts/admin-layout/admin-layout.component';
 
-
 @NgModule({
   declarations: [
     AppComponent,
     AdminLayoutComponent,
+
   ],
   imports: [
     BrowserAnimationsModule,
-    RouterModule.forRoot(AppRoutes,{
+    RouterModule.forRoot(AppRoutes, {
       useHash: true
     }),
     SidebarModule,
@@ -31,6 +31,8 @@ import { AdminLayoutComponent } from './layouts/admin-layout/admin-layout.compon
     FixedPluginModule
   ],
   providers: [],
+  exports: [
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
