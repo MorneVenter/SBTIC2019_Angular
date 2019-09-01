@@ -1,12 +1,19 @@
 th, td {
   padding: 15px;
-}
-
-th {
   text-align: left;
 }
 
+
 td {
-  width: 15%;
+  width: 10%;
+  max-width: 10%;
   font-size: 1.5vh;
+}
+
+.tWarning {
+ background-color: rgba(255, 55, 61, 0.73);
+}
+
+.tWarning:hover {
+  background-color: rgba(255, 55, 61, 0.92);
 }

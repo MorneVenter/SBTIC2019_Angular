@@ -10,7 +10,10 @@ export class TransactionComponent implements OnInit {
 
   @Input()
   tModel: TransactionDataModal;
-
+  @Input()
+  hasHeader = false;
+  @Input()
+  isWarning = false;
   constructor() { }
 
   ngOnInit() {

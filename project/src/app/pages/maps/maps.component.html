@@ -5,19 +5,16 @@
       <div class="card-header ">
         <h3>Transaction History</h3>
       </div>
-      <div class="card-body ">
-        <table style="width:100%">
-          <tr>
-            <td>Date</td>
-            <td>Amount</td>
-            <td>Description</td>
-            <td>Location</td>
-          </tr>
-        </table>
-        <app-transaction [tModel]="t1"></app-transaction>
-        <app-transaction [tModel]="t2"></app-transaction>
-        <hr>
-      </div>
+      <table style="width:100%">
+        <div class="card-body ">
+          <hr class="border-bottom">
+          <app-transaction [hasHeader]="true"></app-transaction>
+          <hr class="border-bottom">
+
+          <app-transaction [tModel]="t1" [isWarning]="true"></app-transaction>
+          <app-transaction [tModel]="t2"></app-transaction>
+        </div>
+      </table>
     </div>
   </div>
 </div>

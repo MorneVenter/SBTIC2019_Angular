@@ -1,9 +1,18 @@
-<hr>
-<table style="width:100%">
-  <tr>
-    <td>{{tModel.timeDate.toLocaleString()}}</td>
-    <td>R {{tModel.amount}}</td>
-    <td>{{tModel.description}}</td>
-    <td>{{tModel.location}}</td>
-  </tr>
-</table>
+<div *ngIf="hasHeader">
+    <tr>
+      <td><h6>Date</h6></td>
+      <td><h6>Amount</h6></td>
+      <td><h6>Description</h6></td>
+      <td><h6>Location</h6></td>
+    </tr>
+</div>
+
+<div *ngIf="!hasHeader">
+    <tr [ngClass]="{'tWarning': isWarning}">
+      <td>{{tModel.timeDate.toLocaleString()}}</td>
+      <td>R {{tModel.amount}}</td>
+      <td>{{tModel.description}}</td>
+      <td>{{tModel.location}}</td>
+    </tr>
+  <hr>
+</div>
