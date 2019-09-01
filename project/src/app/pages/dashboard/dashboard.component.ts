@@ -3,20 +3,21 @@ import Chart from 'chart.js';
 
 
 @Component({
+  // tslint:disable-next-line:component-selector
     selector: 'dashboard-cmp',
     moduleId: module.id,
     templateUrl: 'dashboard.component.html'
 })
 
-export class DashboardComponent implements OnInit{
+export class DashboardComponent implements OnInit {
 
-  public canvas : any;
+  public canvas: any;
   public ctx;
   public chartColor;
   public chartEmail;
   public chartHours;
 
-    ngOnInit(){
+    ngOnInit() {
       this.chartColor = '#FFFFFF';
 
       this.canvas = document.getElementById('chartHours');
@@ -26,14 +27,14 @@ export class DashboardComponent implements OnInit{
         type: 'line',
 
         data: {
-          labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct'],
+          labels: ['Nov', 'Dec', 'Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct'],
           datasets: [{
               borderColor: '#50a075',
               backgroundColor: '#6bd098',
               pointRadius: 2,
               pointHoverRadius: 2,
               borderWidth: 3,
-              data: [2560.00, 3100.00, 2100.10, 2800.00, 4850.50, 1800.15, 1500.90, 2547.70, 2200.00, 3200.70]
+              data: [2700, 3578, 2560.00, 3100.00, 2100.10, 2800.00, 4850.50, 1800.15, 1500.90, 2547.70, 2200.00, 0]
             },
             // {
             //   borderColor: "#f17e5d",
@@ -66,14 +67,14 @@ export class DashboardComponent implements OnInit{
             yAxes: [{
 
               ticks: {
-                fontColor: "#9f9f9f",
+                fontColor: '#9f9f9f',
                 beginAtZero: false,
                 maxTicksLimit: 5,
-                //padding: 20
+                // padding: 20
               },
               gridLines: {
                 drawBorder: false,
-                zeroLineColor: "#ccc",
+                zeroLineColor: '#ccc',
                 color: 'rgba(255,255,255,0.05)'
               }
 
@@ -84,12 +85,12 @@ export class DashboardComponent implements OnInit{
               gridLines: {
                 drawBorder: false,
                 color: 'rgba(255,255,255,0.1)',
-                zeroLineColor: "transparent",
+                zeroLineColor: 'transparent',
                 display: false,
               },
               ticks: {
                 padding: 20,
-                fontColor: "#9f9f9f"
+                fontColor: '#9f9f9f'
               }
             }]
           },
@@ -97,24 +98,29 @@ export class DashboardComponent implements OnInit{
       });
 
 
-      this.canvas = document.getElementById("chartEmail");
-      this.ctx = this.canvas.getContext("2d");
+      this.canvas = document.getElementById('chartEmail');
+      this.ctx = this.canvas.getContext('2d');
       this.chartEmail = new Chart(this.ctx, {
         type: 'pie',
         data: {
           labels: [1, 2, 3],
           datasets: [{
-            label: "Emails",
+            label: 'Spendinge',
             pointRadius: 0,
             pointHoverRadius: 0,
             backgroundColor: [
-              '#e3e3e3',
+              '#72e37a',
               '#4acccd',
               '#fcc468',
-              '#ef8157'
+              '#9375ef',
+              '#56efb0',
+              '#efdd68',
+              '#ef8157',
+              '#ef78df',
+              '#ef504b'
             ],
             borderWidth: 0,
-            data: [342, 480, 530, 120]
+            data: [20, 25, 40, 15, 50, 55, 5, 32, 10]
           }]
         },
 
@@ -142,7 +148,7 @@ export class DashboardComponent implements OnInit{
               },
               gridLines: {
                 drawBorder: false,
-                zeroLineColor: "transparent",
+                zeroLineColor: 'transparent',
                 color: 'rgba(255,255,255,0.05)'
               }
 
@@ -153,7 +159,7 @@ export class DashboardComponent implements OnInit{
               gridLines: {
                 drawBorder: false,
                 color: 'rgba(255,255,255,0.1)',
-                zeroLineColor: "transparent"
+                zeroLineColor: 'transparent'
               },
               ticks: {
                 display: false,
@@ -163,10 +169,10 @@ export class DashboardComponent implements OnInit{
         }
       });
 
-      var speedCanvas = document.getElementById("speedChart");
+      const speedCanvas = document.getElementById('speedChart');
 
-      var dataFirst = {
-        data: [0, 19, 15, 20, 30, 40, 40, 50, 25, 30, 50, 70],
+      const dataFirst = {
+        data: [522, 151, 78, 580, 30, 40, 260, 50, 15, 150, 350, 157, 20, 50, 0, 0, 0],
         fill: false,
         borderColor: '#fbc658',
         backgroundColor: 'transparent',
@@ -176,30 +182,19 @@ export class DashboardComponent implements OnInit{
         pointBorderWidth: 8,
       };
 
-      var dataSecond = {
-        data: [0, 5, 10, 12, 20, 27, 30, 34, 42, 45, 55, 63],
-        fill: false,
-        borderColor: '#51CACF',
-        backgroundColor: 'transparent',
-        pointBorderColor: '#51CACF',
-        pointRadius: 4,
-        pointHoverRadius: 4,
-        pointBorderWidth: 8
+      const speedData = {
+        labels: ['01', '03', '05', '07', '09', '11', '13', '15', '17', '19', '21', '23', '25', '27', '29', '31'],
+        datasets: [dataFirst]
       };
 
-      var speedData = {
-        labels: ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
-        datasets: [dataFirst, dataSecond]
-      };
-
-      var chartOptions = {
+      const chartOptions = {
         legend: {
           display: false,
           position: 'top'
         }
       };
 
-      var lineChart = new Chart(speedCanvas, {
+      const lineChart = new Chart(speedCanvas, {
         type: 'line',
         hover: false,
         data: speedData,
