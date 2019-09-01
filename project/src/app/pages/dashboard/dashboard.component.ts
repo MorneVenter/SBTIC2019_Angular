@@ -17,6 +17,11 @@ export class DashboardComponent implements OnInit {
   public chartEmail;
   public chartHours;
 
+  budget = 3000;
+  balance = 2458.50;
+  goal = 500;
+  savings = 370.50;
+
     ngOnInit() {
       this.chartColor = '#FFFFFF';
 
